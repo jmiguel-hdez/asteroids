@@ -2,6 +2,7 @@
 # the open source pygame library
 import pygame
 from constants import *
+from player import Player
 
 
 def main():
@@ -13,6 +14,9 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0
+    player_x = SCREEN_WIDTH / 2
+    player_y = SCREEN_HEIGHT / 2
+    player = Player(player_x, player_y)
 
     # Game loop
     while True:
@@ -20,6 +24,7 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill(pygame.Color("black"))
+        player.draw(screen)
         pygame.display.flip()
         dt = clock.tick(60) / 1000
 
