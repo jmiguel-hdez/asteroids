@@ -23,6 +23,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        player.update(dt)
         screen.fill(pygame.Color("black"))
         player.draw(screen)
         pygame.display.flip()
